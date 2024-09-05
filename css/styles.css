@@ -522,6 +522,10 @@ main > section {
     font-size: 14px;
   }
 
+  .left-container{
+    left: 1%;
+  }
+
   .projects-content h1 {
     font-size: 28px;
   }
