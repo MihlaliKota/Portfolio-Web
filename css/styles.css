@@ -1,13 +1,15 @@
 body {
   background-color: #ffe4c4;
   font-family: "Space Mono", monospace;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar {
   background-color: bisque;
   padding: 10px 0;
   display: flex;
-  justify-content: right;
+  justify-content: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -32,27 +34,19 @@ body {
   border: solid 1px #341300;
   width: 50px;
   height: 50px;
-}
-
-#back-to-top:hover > button {
-  border: solid 1px #341300;
-  background-color: white;
-}
-
-#back-to-top > button {
-  text-decoration: none;
   color: whitesmoke;
+  text-decoration: none;
 }
 
 #back-to-top:hover > button {
-  text-decoration: none;
+  background-color: white;
   color: #341300;
 }
 
 #back-to-top {
   position: fixed;
-  right: 0px;
-  bottom: 0px;
+  right: 20px;
+  bottom: 20px;
 }
 
 #home {
@@ -65,7 +59,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 80%;
+  align-items: center;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -77,38 +72,28 @@ body {
 }
 
 .profile-pic {
+  flex: 1;
   max-width: 100%;
   padding: 10px;
   text-align: center;
 }
 
 .profile-pic img {
-  max-width: 50%;
-  height: 100%;
-  width: 100%;
+  max-width: 300px;
+  height: auto;
   border: 5px solid #82412c;
   border-radius: 50%;
   display: block;
   margin: 0 auto;
-  position: relative;
-  right: 400px;
-}
-
-.profile-pic img {
   animation: slideInFromRight 1s ease forwards;
 }
 
 .home-text {
-  animation: fadeInFromBottom 1.5s ease forwards;
-}
-
-.home-text {
-  max-width: 70%;
+  flex: 1;
+  max-width: 100%;
   text-align: center;
   margin-top: 20px;
-  position: relative;
-  left: 350px;
-  bottom: 500px;
+  animation: fadeInFromBottom 1.5s ease forwards;
 }
 
 .home-text h1 {
@@ -121,18 +106,17 @@ body {
 
 .contact-button,
 .cv-button {
-  display: block;
-  width: 20%;
-  margin: auto;
+  display: inline-block;
+  width: auto;
+  margin: 10px;
   padding: 10px 20px;
   color: white;
   text-decoration: none;
   font-weight: bold;
   background-color: #762405;
   border-radius: 5px;
-  border-color: #a3310b;
+  border: none;
   transition: background-color 0.3s;
-  margin-bottom: 20px;
 }
 
 .contact-button:hover,
@@ -148,7 +132,7 @@ body {
 }
 
 .text {
-  max-width: 80%;
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -166,30 +150,15 @@ body {
   text-align: justify;
 }
 
-#about {
-  position: relative;
-  bottom: 400px;
+#about, #education, #experience, #projects, #contact {
+  padding: 50px 0;
 }
 
-#education {
-  position: relative;
-  bottom: 400px;
-}
-
-#experience {
-  position: relative;
-  bottom: 400px;
-}
-
-#projects {
-  position: relative;
-  bottom: 400px;
-}
-
-#projects {
-  padding: 100px 0;
+.projects-content {
   text-align: center;
-  background-image: linear-gradient(bisque);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .projects-content h1 {
@@ -204,8 +173,9 @@ body {
 
 .project-card {
   display: inline-block;
-  width: 50rem;
-  margin: 10px;
+  width: 100%;
+  max-width: 50rem;
+  margin: 10px auto;
   background-color: #82412c;
   padding: 20px;
   text-align: left;
@@ -227,18 +197,6 @@ body {
 .project-card a {
   color: white;
   text-decoration: none;
-}
-
-@media only screen and (max-width: 767px) {
-  .project-card {
-    width: 80%;
-    margin: 10px 0;
-  }
-}
-
-#contact {
-  position: relative;
-  bottom: 400px;
 }
 
 main > section {
@@ -300,7 +258,7 @@ main > section {
 }
 
 .left-container {
-  left: -8.35%;
+  left: -8.25%;
 }
 
 .right-container {
@@ -375,14 +333,8 @@ main > section {
   left: -15px;
 }
 
-#contact {
-  padding: px 0;
-  text-align: center;
-  background-color: bisque;
-}
-
 .contact-content {
-  max-width: 80%;
+  max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
@@ -406,7 +358,8 @@ main > section {
 .contact-content textarea {
   display: block;
   margin: 0 auto;
-  width: 50%;
+  width: 100%;
+  max-width: 400px;
 }
 
 .submit-button {
@@ -418,7 +371,7 @@ main > section {
   font-weight: bold;
   border-radius: 5px;
   transition: background-color 0.3s;
-  margin: 0 auto;
+  margin: 10px auto;
   border: none;
 }
 
@@ -431,6 +384,7 @@ main > section {
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+  margin-top: 20px;
 }
 
 .social-buttons .github,
@@ -474,9 +428,40 @@ main > section {
   }
 }
 
-@media screen and (max-width: 600px) {
-  .timeline {
-    margin: 50px auto;
+/* Media Queries */
+@media screen and (max-width: 1200px) {
+  .home-content, .text, .contact-content {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .home-content {
+    flex-direction: column;
+  }
+
+  .profile-pic, .home-text {
+    flex: none;
+    width: 100%;
+  }
+
+  .profile-pic img {
+    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar a {
+    margin: 5px 0;
+  }
+
+  .project-card {
+    width: 90%;
   }
 
   .timeline::after {
@@ -484,8 +469,8 @@ main > section {
   }
 
   .container {
-    width: 75%;
-    padding-left: 70px;
+    width: 100%;
+    padding-left: 80px;
     padding-right: 25px;
   }
 
@@ -512,48 +497,9 @@ main > section {
     border-left: 0;
     left: -15px;
   }
-
-  .left-container {
-    margin-left: 1.75rem;
-  }
 }
 
-/* Navbar */
-@media (max-width: 767px) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navbar a {
-    margin: 5px 0;
-    padding: 8px 16px;
-  }
-}
-
-/* Home Section */
-@media (max-width: 767px) {
-  #home {
-    margin-bottom: 18rem;
-  }
-
-  .home-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .profile-pic img {
-    max-width: 80%;
-    right: 0;
-  }
-
-  .home-text {
-    max-width: 100%;
-    left: 0;
-    bottom: 0;
-  }
-
+@media screen and (max-width: 576px) {
   .home-text h1 {
     font-size: 20px;
   }
@@ -564,6 +510,35 @@ main > section {
 
   .contact-button,
   .cv-button {
-    width: 40%;
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  .text h1 {
+    font-size: 28px;
+  }
+
+  .text p {
+    font-size: 14px;
+  }
+
+  .projects-content h1 {
+    font-size: 28px;
+  }
+
+  .projects-content p {
+    font-size: 16px;
+  }
+
+  .project-card h2 {
+    font-size: 20px;
+  }
+
+  .contact-content h1 {
+    font-size: 28px;
+  }
+
+  .contact-content p {
+    font-size: 16px;
   }
 }
