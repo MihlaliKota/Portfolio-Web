@@ -26,4 +26,4 @@ If you're interested in connecting, discussing potential ventures, or have any q
 
 ## Explore My Portfolio
 
-To visit my portfolio and delve into my work, kindly click on this [link](https://mihlaliportfolio2.netlify.app/).
+To visit my portfolio and delve into my work, kindly click on this [link](https://mihlaliwebportfolio.netlify.app/).
